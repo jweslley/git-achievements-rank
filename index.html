@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Git Achievements Rank</title>
+    <!-- Framework CSS -->
+    <link rel="stylesheet" href="http://www.blueprintcss.org/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="http://www.blueprintcss.org/blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]><link rel="stylesheet" href="http://www.blueprintcss.org/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <style type="text/css" media="screen">
+      p, table, hr, .box { margin-bottom:25px; }
+      .box p { margin-bottom:10px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Git Achievements Rank</h1>
+      <hr>
+
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <th class="span-1">#</th>
+          <th class="span-20">user</th>
+          <th class="span-2">unlocked</th>
+          <th class="span-1">points</th>
+        </thead>
+        <tbody>
+        {% for entry in rank %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+              <a href="http://github.com/{{ entry.user }}">{{ entry.user }}</a>
+            </td>
+            <td>{{ entry.unlocked_count }} / {{ entry.achievements_count }}</td>
+            <td>
+              <a href="http://{{ entry.user }}.github.com/git-achievements">{{ entry.points }}</a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <div class="box">
+        <p>For more information and help, try these resources:</p>
+        <ul class="bottom">
+          <li><a href="http://github.com/icefox/git-achievements">Git achievements</a></li>
+          <li><a href="http://github.com/jweslley/git-achievements-rank">Git achievements rank</a></li>
+        </ul>
+      </div>
+      <p style="text-align: center;">
+        Copyright &copy; 2011 <a href="http://jonhnnyweslley.net">Jonhnny Weslley</a>
+      </p>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-4092043-4']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

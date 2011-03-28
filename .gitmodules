@@ -1,0 +1,3 @@
+[submodule "python-github2"]
+	path = python-github2
+	url = git://github.com/ask/python-github2.git

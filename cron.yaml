@@ -1,0 +1,4 @@
+cron:
+- description: Update rank
+  url: /update/
+  schedule: every day 00:00

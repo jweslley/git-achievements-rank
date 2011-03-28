@@ -1,0 +1,12 @@
+application: git-achievements-rank
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /update/
+  script: main.py
+  login: admin
+
+- url: /.*
+  script: main.py
